@@ -1,0 +1,11 @@
+processor_node:
+  ros__parameters:
+    lidar_topic: "/ouster/points"
+    lidar_id: 1
+    roi_min: [-30.0, -30.0, -2.0]
+    roi_max: [30.0, 30.0, 10.0]
+    chunk_size: 10
+    server_ip: "127.0.0.1"
+    server_port: 8080
+    ground_filter_enabled: false
+    ground_z_threshold: -1.5
