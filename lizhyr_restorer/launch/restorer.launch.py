@@ -5,14 +5,14 @@ import os
 
 
 def generate_launch_description():
-    share_dir = get_package_share_directory("lizhyr")
-    params_file = os.path.join(share_dir, "config", "processor.yaml")
+    share_dir = get_package_share_directory("lizhyr_restorer")
+    params_file = os.path.join(share_dir, "config", "restorer.yaml")
 
     return LaunchDescription([
         Node(
-            package="lizhyr",
-            executable="processor_node",
-            name="processor_node",
+            package="lizhyr_restorer",
+            executable="restorer_node",
+            name="restorer_node",
             parameters=[params_file],
             output="screen",
         )

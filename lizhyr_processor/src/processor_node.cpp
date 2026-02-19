@@ -3,6 +3,7 @@
 #include <arpa/inet.h>
 #include <cerrno>
 #include <chrono>
+#include <cmath>
 #include <cstring>
 #include <functional>
 #include <netinet/in.h>
@@ -107,6 +108,10 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr ProcessorNode::cropRoi(
   output->points.reserve(input->points.size());
 
   for (const auto & pt : input->points) {
+    // Filter out NaN and infinite values
+    if (!std::isfinite(pt.x) || !std::isfinite(pt.y) || !std::isfinite(pt.z)) {
+      continue;
+    }
     if (pt.x < roi_min_[0] || pt.x > roi_max_[0]) {
       continue;
     }

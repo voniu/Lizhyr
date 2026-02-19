@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>lizhyr_restorer</name>
+  <version>0.0.1</version>
+  <description>Point cloud restorer node with TCP server and ROS2 publication.</description>
+  <maintainer email="zekun.wang@hotmail.com">user</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
